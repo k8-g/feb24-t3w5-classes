@@ -31,7 +31,14 @@ export default class PokemonFetcher extends React.Component {
 			// set fetch response data into state 
 			// this.state.pokemonList.push(data);
 			// this.setState({pokemonList: [data]});
-			this.setState({})
+			// this.setState({pokemonList: [...this.state.pokemonList, data]});
+			// this.setState({pokemonList: [...this.state.pokemonList, data]});
+			this.setState((previousState) => {
+				return {
+					pokemonList: [...previousState.pokemonList, data]
+				}
+			});
+			
 		}
 		
 
